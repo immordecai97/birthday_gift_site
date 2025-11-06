@@ -28,6 +28,7 @@ h1, h2, h3, h4, p {
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .title {
@@ -64,14 +65,31 @@ h1, h2, h3, h4, p {
     margin-top: 2rem;
 }
 
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
 .avatar-container {
-    width: 200px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 100px rgb(222, 13, 13);
+  width: 200px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 100px rgb(222, 13, 13);
+  animation: slideInBottom .5s ease-in-out both;
+}
+
+.avatar-name {
+    position: absolute;
+    bottom: 33px;
+    left: 77%;
+    transform: translateX(-50%) rotate(-5deg);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: -3px 5px 4px black;
     animation: slideInBottom .5s ease-in-out both;
-    margin-bottom: 1.8rem;
+    animation-delay: .1s;
 }
 
 .avatar {
@@ -138,8 +156,6 @@ h1, h2, h3, h4, p {
 
 #footer {
     font-style: italic;
-    width: 400px;
-    margin: 40px auto 20px;
 }
 
 a {

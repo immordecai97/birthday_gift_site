@@ -1,0 +1,207 @@
+body {
+    font-family: 'Happy Monkey', cursive;
+    background: linear-gradient(#0c1b29, #44061f);
+    color: #ffffffe8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+    text-shadow: 0 0 1px black;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+}
+
+#bday-age,
+#bday-date {
+    background-color: rgba(220, 11, 11, 0.1);
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.title,
+#bday-age,
+#bday-date {
+    justify-self: end;
+    align-self: end;
+    animation: slideIn .5s ease-in-out both;
+}
+
+#bday-age {
+    animation-delay: .5s;
+}
+
+#bday-date {
+    animation-delay: .6s;
+}
+
+.gift-hint {
+    color: rgb(248, 212, 33);
+    animation: bounceIn .5s ease-in-out both;
+    animation-delay: 1.5s;
+    margin-top: 2rem;
+}
+
+.avatar-container {
+    width: 200px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 100px rgb(222, 13, 13);
+    animation: slideInBottom .5s ease-in-out both;
+    margin-bottom: 1.8rem;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gift-img-wrapper {
+    width: min(90vw, 400px);
+    aspect-ratio: 1 / 1;
+    animation: shake 5s ease-in-out infinite;
+    overflow: hidden;
+    border-radius: 1.1rem;
+    border: 1px solid rgb(109, 6, 125);
+}
+
+
+.gift-img {
+    width: 100%;
+    height: 100%;
+    background-image: url("images/gift-cover.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease-in-out;
+}
+
+
+.gift-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    animation: bounceIn 2.5s ease-in-out both;
+}
+
+.gift-title {
+    text-align: center;
+}
+/* 
+gift-title
+gift-img 
+*/
+
+.gift-img-wrapper:hover {
+    animation-play-state: paused;
+}
+
+#gift-img-happy:hover {
+    background-image: url("images/01_fun_celebration.gif");
+}
+
+#gift-img-hot:hover {
+    background-image: url("images/02_Excited_Standing_Ovation.gif");
+}
+
+#gift-img-genius:hover {
+    background-image: url("images/03_This_Is_Cool.gif");
+}
+
+#gift-img-badass:hover {
+    background-image: url("images/04_homelander.gif");
+}
+
+#gift-img-cheers:hover {
+    background-image: url("images/05_cheers.gif");
+}
+
+#footer {
+    font-style: italic;
+    width: 400px;
+    margin: 40px auto 20px;
+}
+
+a {
+    color: red;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    } 
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+} */
+@keyframes shake {
+    /* Shake durante los primeros 0.5s (20% de 2.5s) */
+    0%, 2%, 4%, 6%, 8%, 10% {
+        transform: translateX(-10px);
+    }
+    1%, 3%, 5%, 7%, 9% {
+        transform: translateX(10px);
+    }
+    /* Pausa desde 10% hasta 100% (2 segundos de espera) */
+    10%, 100% {
+        transform: translateX(0);
+    }
+}
